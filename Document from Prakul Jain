@@ -1,0 +1,563 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3tVoWeDTClI3",
+        "outputId": "c7621841-3f7a-4b63-c558-53abd3284129"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The maximum element is: 99\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 1. Write a Python program to find the maximum element in a list of numbers without\n",
+        "# max functions\n",
+        "# numbers = [10, 20, 4, 45, 99]\n",
+        "# # The maximum element is: 99\n",
+        "# =>\n",
+        "numbers = [10, 20, 4, 45, 99]\n",
+        "max_num = numbers[0]\n",
+        "for num in numbers:\n",
+        "    if num > max_num:\n",
+        "        max_num = num\n",
+        "print(\"The maximum element is:\",max_num)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. Write a Python program to sum all the elements in a list of numbers.\n",
+        "# a. numbers = [10, 20, 30, 40]\n",
+        "# b. The sum of all elements is: 100\n",
+        "# =>\n",
+        "numbers = [10, 20, 30, 40]\n",
+        "total = 0\n",
+        "for i in numbers:\n",
+        "  total += i\n",
+        "print(\"The sum of all elements is:\",total)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "P77CIgVODFzA",
+        "outputId": "2f179283-b01b-4aab-d36f-741bcf4dc3af"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The sum of all elements is: 100\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. Write a Python program to reverse a list without reverse or slicing operator\n",
+        "# a. numbers = [1, 2, 3, 4, 5]\n",
+        "# b. Reversed list: [5, 4, 3, 2, 1]\n",
+        "numbers = [1, 2, 3, 4, 5]\n",
+        "reverse_list = []\n",
+        "for i in range(len(numbers),0,-1):\n",
+        "  reverse_list.append(i)\n",
+        "print(\"Reverse list:\",reverse_list)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9SSay91CFQxK",
+        "outputId": "769f46fb-866d-4c4d-eba2-7126631cc983"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Reverse list: [5, 4, 3, 2, 1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. Write a Python program to sort a list in ascending order without sort functions\n",
+        "l1 = [40,30,20,25]\n",
+        "for i in range(0,len(l1)):\n",
+        "  for j in range(i+1,len(l1)):\n",
+        "    if l1[i] > l1[j]:\n",
+        "      l1[i],l1[j] = l1[j],l1[i]\n",
+        "print(l1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SJT0_PW5Fz1g",
+        "outputId": "bc44a3a3-917d-4da0-ff07-24d9a2e16b80"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[20, 25, 30, 40]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. Write a Python program to remove duplicates from a list while maintaining the order\n",
+        "# of elements.\n",
+        "# a. numbers = [1, 2, 2, 3, 4, 4, 5]\n",
+        "# b. List after removing duplicates: [1, 2, 3, 4, 5]\n",
+        "# =>\n",
+        "numbers = [1, 2, 2, 3, 4, 4, 5]\n",
+        "unique_list = []\n",
+        "for i in numbers:\n",
+        "  if i not in unique_list:\n",
+        "    unique_list.append(i)\n",
+        "print(\"List after removing duplicates:\",unique_list)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6b8rCFjEaofn",
+        "outputId": "f3bf14dd-4c8f-4f1a-a8fa-f7d3548e984b"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "List after removing duplicates: [1, 2, 3, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. Write a Python program to find all pairs of numbers in a list that add up to a specific\n",
+        "# target sum.\n",
+        "# a. numbers = [1, 2, 3, 4, 3, 5, 6] target_sum = 6\n",
+        "# b. Pairs that add up to 6: [(3, 3), (2, 4), (1, 5)]\n",
+        "numbers = [1, 2, 3, 4, 3, 5, 6]\n",
+        "target_sum = 6\n",
+        "for i in range(0,len(numbers)):\n",
+        "  for j in range(i+1,len(numbers)):\n",
+        "    if numbers[i]+numbers[j]==target_sum:\n",
+        "      print(numbers[i],numbers[j])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6AuVNxL-bKJU",
+        "outputId": "a5d54af7-97db-44e4-b255-be4e696a4fb4"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 5\n",
+            "2 4\n",
+            "3 3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 7. Write a Python program to flatten a nested list (list within lists) into a single list.\n",
+        "# a. nested_list = [1, [2, 3], [4, [5, 6], 7], 8]\n",
+        "# b. Flattened list: [1, 2, 3, 4, 5, 6, 7, 8]\n"
+      ],
+      "metadata": {
+        "id": "YiZMn0KOb3zn"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 8. Write a Python program to find the sum of the elements in a list, excluding the largest\n",
+        "# and smallest element. Don’t use max or min functions\n",
+        "# a. numbers = [1, 2, 3, 4, 5]\n",
+        "# b. Sum excluding the largest and smallest element: 9\n",
+        "# =>\n",
+        "numbers = [1,2,3,4,5]\n",
+        "sorted_numbers = sorted(numbers)\n",
+        "sum1= sum(sorted_numbers[1:-1])\n",
+        "print(\"Sum excluding the largest and smallest element:\",sum1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sz0J0sFpdyWG",
+        "outputId": "d77b33aa-65a7-4f9f-c7fb-825c8d43d73b"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sum excluding the largest and smallest element: 9\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 9. Write a Python program to check if a list is a palindrome (reads the same backward\n",
+        "# as forward) using two pointer approach\n",
+        "# a. numbers = [1, 2, 3, 2, 1]\n",
+        "# b. True\n",
+        "# =>\n",
+        "numbers = [1, 2, 3, 2, 1]\n",
+        "\n",
+        "left = 0\n",
+        "right = len(numbers) - 1\n",
+        "\n",
+        "\n",
+        "is_palindrome = True\n",
+        "while left < right:\n",
+        "    if numbers[left] != numbers[right]:\n",
+        "        is_palindrome = False\n",
+        "        break\n",
+        "    left += 1\n",
+        "    right -= 1\n",
+        "\n",
+        "print(is_palindrome)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iyDcp6vte4NL",
+        "outputId": "772e6632-21a5-4127-f9d7-7ac34461be1c"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 10. Write a function to remove duplicate elements from a list.\n",
+        "# a. numbers = [1, 2, 3, 2, 4, 5, 1, 6]\n",
+        "# b. [1, 2, 3, 4, 5, 6]\n",
+        "numbers = [1, 2, 3, 2, 4, 5, 1, 6]\n",
+        "def func(numbers):\n",
+        "  unique_list = []\n",
+        "  for i in numbers:\n",
+        "    if i not in unique_list:\n",
+        "      unique_list.append(i)\n",
+        "  print(unique_list)\n",
+        "\n",
+        "func(numbers)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DpTe3f-Af7Wr",
+        "outputId": "8d3b6561-8eaf-4b73-b946-8073afa8d969"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5, 6]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 11. Find Common Elements in Two Lists\n",
+        "# a. list1 = [1, 2, 3, 4, 5]\n",
+        "# b. list2 = [3, 4, 5, 6, 7]\n",
+        "# c. Result: [3, 4, 5]\n",
+        "list1 = [1, 2, 3, 4, 5]\n",
+        "list2 = [3, 4, 5, 6, 7]\n",
+        "common_elements = [element for element in list1 if element in list2]\n",
+        "print(\"Result:\",common_elements)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ezFQ9AOTQ0lv",
+        "outputId": "8d0951a5-c879-4e4e-f25e-77790afb78c8"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Result: [3, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 12. Find the Longest Word in a List\n",
+        "# a. words = [\"apple\", \"banana\", \"strawberry\", \"kiwi\"]\n",
+        "# b. Strawberry\n",
+        "words = [\"apple\", \"banana\", \"strawberry\", \"kiwi\"]\n",
+        "Longest_word = \"\"\n",
+        "for i in words:\n",
+        "  if len(i)>len(Longest_word):\n",
+        "    Longest_word = i\n",
+        "print(Longest_word)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tVKljeUaSPq7",
+        "outputId": "973bb7fe-5170-4c9b-e6c6-5863a7b9644d"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "strawberry\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 13. Find Missing Number in a List\n"
+      ],
+      "metadata": {
+        "id": "-MI8UgY0Sv_G"
+      },
+      "execution_count": 10,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 14. Find Missing Number in a List\n",
+        "# You are given a list of n-1 numbers in the range 1 to n. One number is missing\n",
+        "# from the sequence. Find the missing number.\n",
+        "# a. numbers = [1, 2, 4, 5, 6]\n",
+        "# b. 3\n",
+        "# =>\n",
+        "numbers = [1,2,4,5,6]\n",
+        "n = len(numbers)+1\n",
+        "total_sum = n*(n+1)//2\n",
+        "missing_number = total_sum - sum(numbers)\n",
+        "print(missing_number)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YPnYFrUoTJid",
+        "outputId": "f5ec3841-4d45-41f1-df19-04eaa60a9adb"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 15. Find the First Non-Repeating Element\n",
+        "# Given a list of integers, find the first element that appears only once.\n",
+        "# a. numbers = [4, 5, 1, 2, 0, 4, 5, 2]\n",
+        "# b. Expected Output: 1\n",
+        "numbers = [4, 5, 1, 2, 0, 4, 5, 2]\n",
+        "\n",
+        "for i in numbers:\n",
+        "  if numbers.count(i) == 1:\n",
+        "    print(i)\n",
+        "    break"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8Tgu8RVBVSkc",
+        "outputId": "a90c9999-0865-4a94-d655-ae2a4e95f3d7"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 16. Move All Zeros to the End\n",
+        "# Given a list of integers, move all zeros to the end while maintaining the relative order\n",
+        "# of non-zero elements. Don’t use any inbuilt functions\n",
+        "# a. numbers = [0, 1, 0, 3, 12]\n",
+        "# b. [1, 3, 12, 0, 0]\n",
+        "numbers = [0, 1, 0, 3, 12]\n",
+        "for i in range(0,len(numbers)):\n",
+        "    if numbers[i] == 0:\n",
+        "        numbers.remove(numbers[i])\n",
+        "        numbers.append(0)\n",
+        "print(numbers)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3Pto85DmV-Fs",
+        "outputId": "0a5ef69d-7a99-4a5f-c413-83b40add2394"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 3, 12, 0, 0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 17. Find Elements Greater Than Their Left Neighbor\n",
+        "# a. numbers = [1, 3, 2, 6, 5, 8, 7]\n",
+        "# b. [3, 6, 8]\n",
+        "numbers = [1, 3, 2, 6, 5, 8, 7]\n",
+        "l1 = []\n",
+        "for i in range(0,len(numbers)-1):\n",
+        "  if numbers[i+1]>numbers[i]:\n",
+        "    l1.append(numbers[i+1])\n",
+        "print(l1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6VaXWHrpWqbc",
+        "outputId": "843581be-6176-4acf-91bc-613be57526d7"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[3, 6, 8]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 18. Find Triplets That Sum to Zero\n",
+        "# Given a list of numbers, find all unique triplets (a, b, c) such that a + b + c = 0.\n",
+        "# a. numbers = [-1, 0, 1, 2, -1, -4]\n",
+        "# b. Expected Output: [(-1, -1, 2), (-1, 0, 1)]\n",
+        "numbers = [-1, 0, 1, 2, -1, -4]\n",
+        "l1 = []\n",
+        "for i in range(len(numbers)):\n",
+        "  for j in range(i+1, len(numbers)):\n",
+        "    for k in range(j+1, len(numbers)):\n",
+        "      if numbers[i] + numbers[j] + numbers[k] == 0:\n",
+        "        l1.append((numbers[i], numbers[j], numbers[k]))\n",
+        "print(l1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hABfGevZXXIl",
+        "outputId": "e1ae1250-2f1e-4d62-d996-afd81c9a188f"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[(-1, 0, 1), (-1, 2, -1), (0, 1, -1)]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
